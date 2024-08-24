@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Seu Nome</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icons8/1.1.1/css/icons8.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Efeito de Partículas -->
+  <div id="particles-js"></div>
+
+
+  <header class="header">
+    <img src="./img/profile.png" alt="Foto de Perfil" class="profile-photo">
+    <h1>Reginaldo Nunes Sampaio</h1>
+    <p>Desenvolvedor Front-End | Web</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/reginaldonunes" target="_blank" class="color4">
+          <i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/reginaldonunes" target="_blank" class="color4"><i
+              class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/reginaldonunes" target="_blank" class="color4"><i
+              class="fab fa-instagram"></i></a>
+  </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#sobre" class="nav-link" data-section="sobre"><i class="fas fa-user"></i></a></li>
+      <li><a href="#especialidades" class="nav-link" data-section="especialidades"><i class="fas fa-code"></i></a></li>
+      <li><a href="#projetos" class="nav-link" data-section="projetos"><i class="fas fa-project-diagram"></i></a></li>
+      <li><a href="#contato" class="nav-link" data-section="contato"><i class="fas fa-envelope"></i></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="sobre" class="content-section active">
+      <div class="card">
+        <h2>Sobre Mim</h2>
+        <p>Sou um profissional em constante evolução, com paixão por tecnologia e inovação. Atualmente, estou cursando
+          Análise e Desenvolvimento de Sistemas e MBA em Desenvolvimento de Software pelo DevClub, onde estou
+          aprimorando minhas habilidades em desenvolvimento front-end e me tornando um especialista em criar soluções
+          inovadoras e escaláveis.
+      </div>
+    </section>
+
+    <section id="especialidades" class="content-section">
+      <div id="skills-section">
+        <h2>Especialidades</h2>
+        <ul>
+          <li>
+            <div class="icon-grid">
+              <i class="fab fa-html5"></i>
+              <span>HTML</span>
+            </div>
+            <div class="icon-grid">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS</span>
+            </div>
+            <div class="icon-grid">
+              <i class="fab fa-js-square"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="icon-grid">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon-grid">
+              <i class="fab fa-vuejs"></i>
+              <span>Vue.js</span>
+            </div>
+            <div class="icon-grid">
+              <i class="fas fa-mobile-alt"></i>
+              <span>Design Responsivo</span>
+            </div>
+            <div class="icon-grid">
+              <i class="fas fa-tablet-alt"></i>
+              <span>Tablets</span>
+            </div>
+            <div class="icon-grid">
+              <i class="fas fa-desktop"></i>
+              <span>Desktop</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon-grid">
+              <i class="fas fa-paint-brush"></i>
+              <span>UI/UX Design</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projetos" class="content-section">
+  <div class="project-section">
+    <h2>Projetos</h2>
+    <div class="project-grid">
+      <div class="project-item">
+        <img src="./img/projeto 1.jpg" alt="Projeto 1">
+        <h3>Projeto 1</h3>
+        <p>Descrição do projeto...</p>
+        <a href="#" class="btn">Ver mais</a>
+      </div>
+      <div class="project-item">
+        <img src="./img/projeto 2.jpg" alt="Projeto 2">
+        <h3>Projeto 2</h3>
+        <p>Descrição do projeto...</p>
+        <a href="#" class="btn">Ver mais</a>
+      </div>
+      <!-- Adicione mais projetos aqui -->
+      <div class="project-item">
+        <img src="./img/projeto 3.jpg" alt="Projeto 3">
+        <h3>Projeto 3</h3>
+        <p>Descrição do projeto...</p>
+        <a href="#" class="btn">Ver mais</a>
+      </div>
+      <div class="project-item">
+        <img src="./img/projeto 4.png" alt="Projeto 4">
+        <h3>Projeto 4</h3>
+        <p>Descrição do projeto...</p>
+        <a href="#" class="btn">Ver mais</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="contato" class="content-section">
+      <div class="card">
+        <h2>Contato</h2>
+        <form action="mailto:regis.nunes2k@gmail.com" method="post" enctype="text/plain">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem"></textarea>
+          <button type="submit">Enviar <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Seu Nome - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
