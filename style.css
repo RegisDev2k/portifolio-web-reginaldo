@@ -84,16 +84,17 @@ body {
 
 .navbar {
   position: fixed;
-  top: 87%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(80px);
   padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10);
   z-index: 1000;
   width: 300px;
+  border: 2px solid;
 
 }
 
@@ -158,29 +159,26 @@ main {
   }
 }
 
-.card {
+.about-section {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 20px 10px;
-  margin: 20px 50px;
+  margin: 0 20px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-
+  border: 2px;
+  border-style: solid;
+  border-color: #fff;
 }
 
-#sobre {
-  margin: 20px 15%;
-  padding: 4px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+.about-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 #sobre h2 {
-  margin: 20px;
+  margin: 20px 0;
 }
 
 #sobre P {
@@ -188,20 +186,27 @@ main {
   text-align: center;
   text-decoration: none;
   margin: 20px;
-  
+
 }
 
 #skills-section {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 4px;
-  margin: 20px 25%;
+  margin: 0 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
+  border: 2px;
+  border-style: solid;
+  border-color: #fff;
+}
+
+#skills-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 #skills-section h2 {
@@ -243,66 +248,75 @@ main {
   color: var(--hablidades-sub-title-color);
 }
 
-#projetos {
-  background: rgba(255, 255, 255, 0.1);
+.project-section {
+  background: rgba(255, 254, 254, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 4px;
-  margin: 20px 25%;
+  margin: 0 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  display: flex;
   flex-direction: column;
+  border: 2px;
+  border-style: solid;
+  border-color: #fff;
 }
 
-#projetos h2 {
-  margin: 20px
+.project-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 .project-grid {
-  margin: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  padding: 20px 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .project-item {
-  margin: 10px;
-  background-color: aqua;
-  padding: 10px;
-  border: 3px solid #333;
+  margin-bottom: 15px;
+  background-color: #333;
+  padding: 10px 20px;
+  border: 2px solid #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
+#projetos h2 {
+  margin: 20px 0;
+}
+
+
 .project-item img {
-  width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 30px 0 30px 0;
   border: 3px solid #333;
   cursor: pointer;
-  
+
 }
 
 .project-item h3 {
-  margin-top: 0;
+  padding: 10px;
   font-weight: bold;
-  color: #333;
+  color: #fff;
+  ;
 }
 
 .project-item p {
   font-size: 16px;
-  color: #666;
+  color: #fff;
+  padding-bottom: 10px;
 }
 
 .project-item .btn {
   display: flex;
-  background-color: #333;
-  color: #ffffff;
-  padding: 2px 0;
-  margin: 0 40px;
+  background: #fff;
+  color: #333;
+  margin: 0 100px;
   border: 2px solid #fff;
   border-radius: 20px;
   cursor: pointer;
@@ -319,15 +333,29 @@ main {
   color: #333;
 }
 
-.card:hover {
+.contact-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0 10px;
+  margin: 0 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: 2px;
+  border-style: solid;
+  border-color: #fff;
+}
+
+
+.contact-section:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
-#especialidades:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-  
+.contact-section h2 {
+  font-size: 25px;
+  margin: 20px 0;
 }
 
 footer {
@@ -346,27 +374,25 @@ footer {
 form input,
 form textarea {
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   margin: 10px 0;
   border: none;
   border-radius: 10px;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 16px;
+  color: #ffffff;
+  font-size: 15px;
 }
 
 form button {
-  background: #ffdd57;
+  background: #fff;
   color: #333;
-  padding: 15px 30px;
+  padding: 10px 20px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 10px;
 }
 
 form button i {
@@ -374,7 +400,7 @@ form button i {
 }
 
 form button:hover {
-  background: #ffcc00;
+  background: aqua;
   transform: scale(1.1);
 }
 
@@ -396,59 +422,72 @@ html {
 
 /* Responsividade para desktop grande */
 @media only screen and (min-width: 1200px) {
+
   /* Estilos para desktop grande */
   .header {
     padding: 60px 20px 0;
   }
+
   .profile-photo {
     width: 150px;
     height: 150px;
   }
-  .navbar {
-    width: 300px;
+
+  .project-grid {
+    gap: 20px;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
+
   .content-section {
     font-size: 18px;
   }
-  .card {
-    margin: 20px 40px;
+
+  .contact-section {
+    margin: 0 400px;
   }
+
   #sobre {
     margin: 20px 15%;
   }
+
   #skills-section {
     margin: 20px 20%;
   }
-  #projetos {
-    margin: 20px 20%;
-  }
+
 }
 
 /* Responsividade para desktop médio */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
   /* Estilos para desktop médio */
   .header {
     padding: 50px 15px 0;
   }
+
   .profile-photo {
     width: 120px;
     height: 120px;
   }
-  .navbar {
-    width: 250px;
-  }
+
+
   .content-section {
     font-size: 16px;
   }
-  .card {
-    margin: 15px 30px;
+
+  .contact-section {
+    margin: 0 300px;
   }
+
   #sobre {
     margin: 15px 10%;
   }
+
   #skills-section {
     margin: 15px 15%;
   }
+
   #projetos {
     margin: 15px 15%;
   }
@@ -456,55 +495,72 @@ html {
 
 /* Responsividade para tablet */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+
   /* Estilos para tablet */
   .header {
     padding: 40px 10px 0;
   }
+
   .profile-photo {
     width: 100px;
     height: 100px;
   }
-  .navbar {
-    width: 200px;
-  }
+
   .content-section {
     font-size: 14px;
   }
-  .card {
-    margin: 10px 20px;
+
+  .contact-section {
+    margin: 0 200px;
   }
+
   #sobre {
     margin: 10px 5%;
   }
+
   #skills-section {
     margin: 10px 10%;
   }
-  #projetos {
-    margin: 10px 10%;
-  }
+  
 }
 
 /* Responsividade para mobile grande */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+
   /* Estilos para mobile grande */
   .header {
     padding: 30px 5px 0;
   }
-  .navbar {
-    width: 150px;
+
+  .project-grid {
+    gap: 10px;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
+
+  .project-item {
+    padding: 5px;
+  }
+
+  .project-item .btn {
+    margin: 0 50px;
+  }
+
   .content-section {
     font-size: 12px;
   }
-  .card {
-    margin: 5px 15px;
+
+  .contact-section {
+    margin: 0 150px;
   }
+
+
   #sobre {
     margin: 5px 0;
   }
-  #skills-section {
-    margin: 5px 5%;
-  }
+
+
   #projetos {
     margin: 5px 5%;
   }
@@ -512,62 +568,64 @@ html {
 
 /* Responsividade para mobile pequeno */
 @media only screen and (max-width: 575px) {
+
   /* Estilos para mobile pequeno */
-  .header {
-    padding: 20px 0 0;
-  }
-  .content-section {
-    font-size: 10px;
-  }
-  .card {
-    margin: 0 30px;
-    border: 1px solid;
-  }
+
   #sobre {
     margin: 0;
   }
-  #skills-section {
-    padding: 0 50px;
-    margin: 10px 20px;
-    align-items: center;
+
+  #sobre p {
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px;
+  }
+
+  #skills-section ul {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-content: center;
     justify-content: center;
-    border: 1px solid;
+    align-items: center;
+    justify-items: center;
   }
+
+  #skills-section span {
+    font-size: 12px;
+  }
+
   #sobre h2 {
-  font-size: 25px;
+    font-size: 25px;
   }
+
   #skills-section h2 {
     margin: 20px 0;
     font-size: 25px;
   }
-  #projetos {
-    margin: 0 20px;
-    border: 1px solid;
-  }
-  .project-item {
-    margin: 20px;
-  }
-  .project-grid {
-    margin: 20px;
-    display: block;
-  }
+
   #projetos h2 {
     font-size: 25px;
   }
 
-  #contato h2 {
-    font-size: 25px;
+  .project-grid {
+    display: block;
+  }
+
+  .project-item .btn {
+    margin: 0 50px;
   }
 
   #contato label {
     font-size: 20px;
   }
 
-  .navbar {
-    top: 90%;
-    border: 1px solid;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 10);
-    backdrop-filter: blur(90px);
-    border-radius: 25px;
+
+  footer {
+    font-size: 12px;
+    font-weight: 500;
   }
+
 }
