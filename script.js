@@ -239,7 +239,7 @@ function getPath(update, smoothing, pointsNew) {
 }
 
 let isDownloaded = false;
-let fileURL = 'curriculo/Reginaldo Nunes.pdf'; // Substitua pelo caminho correto do seu PDF
+let fileURL = 'curriculo/Reginaldo%20Nunes.pdf'; // Substitua pelo caminho correto do seu PDF
 
 function handleButtonClick() {
     const downloadBtn = document.getElementById('downloadBtn');
