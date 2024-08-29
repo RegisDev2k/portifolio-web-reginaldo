@@ -238,29 +238,48 @@ function getPath(update, smoothing, pointsNew) {
   return `<path d="${d}" />`;
 }
 
-const downloadCVButton = document.querySelector('.download-cv-button');
-const pdfLink = './Curriculo/Reginaldo Nunes.pdf';
+let isDownloaded = false;
+let fileURL = 'curriculo/Reginaldo Nunes.pdf'; // Substitua pelo caminho correto do seu PDF
 
-downloadCVButton.addEventListener('click', (e) => {
-  e.preventDefault(); // prevent default link behavior
+function handleButtonClick() {
+    const downloadBtn = document.getElementById('downloadBtn');
+    const icon = downloadBtn.querySelector('i');
 
-  const target = e.target.textContent.trim();
-  if (target.includes('Download-CV')) {
-    // adicionar um delay de 3 segundos antes de iniciar o download
+    if (!isDownloaded) {
+        downloadCV(downloadBtn, icon);
+    } else {
+        openFile();
+    }
+}
+
+function downloadCV(downloadBtn, icon) {
+    // Simulate downloading
+    downloadBtn.classList.add('loading');
+    downloadBtn.querySelector('span').innerText = 'Downloading...';
+    downloadBtn.classList.add('disabled');
+    icon.classList.remove('fa-download');
+    icon.classList.add('fa-spinner', 'fa-spin');
+
     setTimeout(() => {
-      fetch(pdfLink)
-        .then(response => response.blob())
-        .then(blob => {
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.target = '_blank'; // use target em vez de download
-          a.click();
-          URL.revokeObjectURL(url);
-        });
-    }, 3000); // 3000 milissegundos = 3 segundos
-  } else if (target.includes('Abrir Arquivo')) {
-    // open the PDF file in a new tab
-    window.open(pdfLink, '_blank');
-  }
-});
+        // Simulate download complete
+        downloadBtn.classList.remove('loading');
+        downloadBtn.classList.add('open');
+        downloadBtn.querySelector('span').innerText = 'Abrir Arquivo';
+        downloadBtn.classList.remove('disabled');
+        icon.classList.remove('fa-spinner', 'fa-spin');
+        icon.classList.add('fa-folder-open');
+
+        isDownloaded = true;
+
+        // Download the CV
+        const link = document.createElement('a');
+        link.href = fileURL;
+        link.download = 'Curriculo Reginaldo Nunes.pdf';
+        link.click();
+    }, 3000); // Simulate 3 seconds delay for downloading
+}
+
+function openFile() {
+    window.open(fileURL, '_blank'); // Abre o arquivo em uma nova aba do navegador
+}
+
