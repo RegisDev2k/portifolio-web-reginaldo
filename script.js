@@ -239,7 +239,7 @@ function getPath(update, smoothing, pointsNew) {
 }
 
 let isDownloaded = false;
-let fileURL = 'curriculo/Reginaldo%20Nunes.pdf'; // Substitua pelo caminho correto do seu PDF
+let fileURL = 'curriculo/Reginaldo%20Nunes.pdf'; // Substitua pelo caminho correto do seu PDF, codificado corretamente
 
 function handleButtonClick() {
     const downloadBtn = document.getElementById('downloadBtn');
@@ -253,7 +253,7 @@ function handleButtonClick() {
 }
 
 function downloadCV(downloadBtn, icon) {
-    // Simulate downloading
+    // Simular o download
     downloadBtn.classList.add('loading');
     downloadBtn.querySelector('span').innerText = 'Downloading...';
     downloadBtn.classList.add('disabled');
@@ -261,7 +261,7 @@ function downloadCV(downloadBtn, icon) {
     icon.classList.add('fa-spinner', 'fa-spin');
 
     setTimeout(() => {
-        // Simulate download complete
+        // Simular término do download
         downloadBtn.classList.remove('loading');
         downloadBtn.classList.add('open');
         downloadBtn.querySelector('span').innerText = 'Abrir Arquivo';
@@ -271,15 +271,11 @@ function downloadCV(downloadBtn, icon) {
 
         isDownloaded = true;
 
-        // Download the CV
-        const link = document.createElement('a');
-        link.href = fileURL;
-        link.download = 'Curriculo Reginaldo Nunes.pdf';
-        link.click();
-    }, 3000); // Simulate 3 seconds delay for downloading
+        // Abre o arquivo diretamente em uma nova aba do navegador
+        window.open(fileURL, '_blank'); 
+    }, 3000); // Simular atraso de 3 segundos para o "download"
 }
 
 function openFile() {
-    window.open(fileURL, '_blank'); // Abre o arquivo em uma nova aba do navegador
+    window.open(fileURL, '_blank'); // Abre o arquivo novamente em uma nova aba do navegador
 }
-
