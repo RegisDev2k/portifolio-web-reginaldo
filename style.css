@@ -82,6 +82,304 @@ body {
   color: aquamarine;
 }
 
+/* styles para botao de cv-download */
+.download-cv-button {
+  --background: #fff;
+  --rectangle: #333;
+  --success: aqua;
+  --text: #333;
+  --arrow: #fff;
+  --checkmark: #333;
+  --shadow: rgba(10, 22, 50, .24);
+  display: flex;
+  overflow: hidden;
+  text-decoration: none;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  background: var(--background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px -1px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-cv-button:hover {
+  transition: transform 0.3s ease, color 0.3s ease;
+  transform: scale(1.1);
+}
+
+.download-cv-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 4px -1px var(--shadow);
+}
+.download-cv-button ul {
+  margin: 0;
+  padding: 16px 40px;
+  list-style: none;
+  text-align: center;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--text);
+}
+.download-cv-button ul li:not(:first-child) {
+  top: 16px;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+.download-cv-button ul li:nth-child(2) {
+  top: 76px;
+}
+.download-cv-button ul li:nth-child(3) {
+  top: 136px;
+}
+.download-cv-button > div {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: var(--rectangle);
+}
+.download-cv-button > div:before, .download-cv-button > div:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.download-cv-button > div:before {
+  border-radius: 1px;
+  width: 2px;
+  top: 50%;
+  left: 50%;
+  height: 17px;
+  margin: -9px 0 0 -1px;
+  background: var(--arrow);
+}
+.download-cv-button > div:after {
+  width: 60px;
+  height: 60px;
+  transform-origin: 50% 0;
+  border-radius: 0 0 80% 80%;
+  background: var(--success);
+  top: 0;
+  left: 0;
+  transform: scaleY(0);
+}
+.download-cv-button > div svg {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  margin: -9px 0 0 -10px;
+  fill: none;
+  z-index: 1;
+  stroke-width: 2px;
+  stroke: var(--arrow);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.download-cv-button.loading ul {
+  -webkit-animation: text calc(var(--duration) * 1ms) linear forwards calc(var(--duration) * .065ms);
+          animation: text calc(var(--duration) * 1ms) linear forwards calc(var(--duration) * .065ms);
+}
+.download-cv-button.loading > div:before {
+  -webkit-animation: line calc(var(--duration) * 1ms) linear forwards calc(var(--duration) * .065ms);
+          animation: line calc(var(--duration) * 1ms) linear forwards calc(var(--duration) * .065ms);
+}
+.download-cv-button.loading > div:after {
+  -webkit-animation: background calc(var(--duration) * 1ms) linear forwards calc(var(--duration) * .065ms);
+          animation: background calc(var(--duration) * 1ms) linear forwards calc(var(--duration) * .065ms);
+}
+.download-cv-button.loading > div svg {
+  -webkit-animation: svg calc(var(--duration) * 1ms) linear forwards calc(var(--duration) * .065ms);
+          animation: svg calc(var(--duration) * 1ms) linear forwards calc(var(--duration) * .065ms);
+}
+
+@-webkit-keyframes text {
+  10%, 85% {
+    transform: translateY(-100%);
+  }
+  95%, 100% {
+    transform: translateY(-200%);
+  }
+}
+
+@keyframes text {
+  10%, 85% {
+    transform: translateY(-100%);
+  }
+  95%, 100% {
+    transform: translateY(-200%);
+  }
+}
+@-webkit-keyframes line {
+  5%, 10% {
+    transform: translateY(-30px);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  65% {
+    transform: translateY(0);
+  }
+  75%, 100% {
+    transform: translateY(30px);
+  }
+}
+@keyframes line {
+  5%, 10% {
+    transform: translateY(-30px);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  65% {
+    transform: translateY(0);
+  }
+  75%, 100% {
+    transform: translateY(30px);
+  }
+}
+@-webkit-keyframes svg {
+  0%, 20% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+  21%, 89% {
+    stroke-dasharray: 26px;
+    stroke-dashoffset: 26px;
+    stroke-width: 3px;
+    margin: -10px 0 0 -10px;
+    stroke: var(--checkmark);
+  }
+  100% {
+    stroke-dasharray: 26px;
+    stroke-dashoffset: 0;
+    margin: -10px 0 0 -10px;
+    stroke: var(--checkmark);
+  }
+  12% {
+    opacity: 1;
+  }
+  20%, 89% {
+    opacity: 0;
+  }
+  90%, 100% {
+    opacity: 1;
+  }
+}
+@keyframes svg {
+  0%, 20% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+  21%, 89% {
+    stroke-dasharray: 26px;
+    stroke-dashoffset: 26px;
+    stroke-width: 3px;
+    margin: -10px 0 0 -10px;
+    stroke: var(--checkmark);
+  }
+  100% {
+    stroke-dasharray: 26px;
+    stroke-dashoffset: 0;
+    margin: -10px 0 0 -10px;
+    stroke: var(--checkmark);
+  }
+  12% {
+    opacity: 1;
+  }
+  20%, 89% {
+    opacity: 0;
+  }
+  90%, 100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes background {
+  10% {
+    transform: scaleY(0);
+  }
+  40% {
+    transform: scaleY(0.15);
+  }
+  65% {
+    transform: scaleY(0.5);
+    border-radius: 0 0 50% 50%;
+  }
+  75% {
+    border-radius: 0 0 50% 50%;
+  }
+  90%, 100% {
+    border-radius: 0;
+  }
+  75%, 100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes background {
+  10% {
+    transform: scaleY(0);
+  }
+  40% {
+    transform: scaleY(0.15);
+  }
+  65% {
+    transform: scaleY(0.5);
+    border-radius: 0 0 50% 50%;
+  }
+  75% {
+    border-radius: 0 0 50% 50%;
+  }
+  90%, 100% {
+    border-radius: 0;
+  }
+  75%, 100% {
+    transform: scaleY(1);
+  }
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body .download-cv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body .download-cv > div {
+  flex-basis: 100%;
+  width: 0;
+}
+body .download-cv .download-cv-button {
+  margin: 16px;
+}
+@media (max-width: 400px) {
+  body .download-cv .download-cv-button {
+    margin: 12px;
+  }
+}
+body .dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+body .dribbble img {
+  display: block;
+  height: 28px;
+}
+/* final do estylo para cv-download */
 .navbar {
   position: fixed;
   top: 90%;
@@ -132,7 +430,7 @@ body {
 }
 
 main {
-  padding: 20px 0 150px;
+  padding: 10px 0 150px;
 }
 
 .content-section {
@@ -158,6 +456,30 @@ main {
     opacity: 1;
   }
 }
+
+.cv-download {
+  margin-top: 20px;
+}
+
+.btn-download {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* You can customize the color */
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+  background-color: #45a049; /* Hover effect */
+}
+
+.btn-download i {
+  margin-right: 8px;
+}
+
 
 .about-section {
   background: rgba(255, 255, 255, 0.1);
