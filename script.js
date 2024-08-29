@@ -245,7 +245,7 @@ downloadCVButton.addEventListener('click', (e) => {
   e.preventDefault(); // prevent default link behavior
 
   const target = e.target.textContent.trim();
-  if (target === 'Download-CV') {
+  if (target.includes('Download-CV')) {
     // adicionar um delay de 3 segundos antes de iniciar o download
     setTimeout(() => {
       fetch(pdfLink)
@@ -254,14 +254,13 @@ downloadCVButton.addEventListener('click', (e) => {
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
-          a.download = 'curriculum Reginaldo';
+          a.target = '_blank'; // use target em vez de download
           a.click();
           URL.revokeObjectURL(url);
         });
     }, 3000); // 3000 milissegundos = 3 segundos
-  } else if (target === 'Abrir Arquivo') {
+  } else if (target.includes('Abrir Arquivo')) {
     // open the PDF file in a new tab
     window.open(pdfLink, '_blank');
   }
 });
-
